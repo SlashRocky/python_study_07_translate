@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <title>A simple translator</title>
+        <script type="text/javascript" src="eel.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script>
+            async function translation(){
+                let src = document.getElementById('src').value
+                let dest = await eel.trans_from_en_to_ja(src)()
+                document.getElementById('dest').value = dest
+            }
+        </script>
+    </head>
+    <body>
+        <div class="items">
+            <div class="item-1">
+                <p>原文（英語）</p>
+                <textarea name="" id="src" cols="55" rows="10"></textarea>
+            </div>
+            <div class="item-2">
+                <button onclick="translation()" class="translation-btn">翻訳する</button>
+            </div>
+            <div class="item-3">
+                <p>訳文（日本語）</p>
+                <textarea name="" id="dest" cols="55" rows="10"></textarea>
+            </div>
+        </div>
+    </body>
+</html>
